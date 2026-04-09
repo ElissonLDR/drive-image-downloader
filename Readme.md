@@ -19,24 +19,6 @@ O `.bat` exige que os IDs das imagens sejam colados manualmente no código a cad
 - Trata erros por download sem interromper o processo
 - Funciona tanto como script `.py` quanto como executável `.exe`
 
-## 📁 Estrutura esperada
-Raiz/
-├── baixar_imagens.exe
-├── Categoria A/
-│   ├── Subcategoria 1/
-│   │   ├── arquivo.xlsx
-│   │   └── Imagens/
-│   │       └── arquivo/
-│   └── Subcategoria 2/
-│       ├── arquivo.xlsx
-│       └── Imagens/
-│           └── arquivo/
-└── Categoria B/
-└── Subcategoria 1/
-├── arquivo.xlsx
-└── Imagens/
-└── arquivo/
-
 ## 🚀 Como usar
 
 1. Coloque o executável (ou script) na pasta raiz (ex: `Raiz/`)
