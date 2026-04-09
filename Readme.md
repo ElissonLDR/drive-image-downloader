@@ -2,6 +2,31 @@
 
 Ferramenta para baixar automaticamente imagens do Google Drive a partir de links encontrados em arquivos Excel, organizando tudo em pastas por nome de arquivo.
 
+## 🆚 Por que não usar um script `.bat`?
+
+Uma alternativa simples para baixar imagens do Google Drive é um script `.bat` com `curl`:
+
+```bat
+@echo off
+set LINKS=ID1 ID2 ID3
+for %%i in (%LINKS%) do (
+    curl -L -OJ "https://drive.google.com/uc?export=download&id=%%i"
+)
+pause
+```
+
+Essa abordagem funciona, mas tem limitações importantes:
+
+| | Script `.bat` | Drive Image Downloader |
+|---|---|---|
+| IDs das imagens | Inseridos manualmente no código | Lidos automaticamente do Excel |
+| Quantidade de arquivos | Um script por vez | Todos os Excels de todas as subpastas |
+| Organização | Tudo na mesma pasta | Pasta separada por arquivo Excel |
+| Manutenção | Editar o código a cada mudança | Só atualizar o Excel |
+| Escalabilidade | Inviável com muitos arquivos | Centenas de arquivos sem esforço extra |
+
+Em resumo: o `.bat` resolve bem para poucos links avulsos. Este projeto foi criado para cenários onde os links já estão organizados em planilhas Excel e a estrutura de pastas é extensa, eliminando qualquer trabalho manual.
+
 ## ✨ Funcionalidades
 
 - Percorre todas as subpastas recursivamente a partir da pasta raiz
